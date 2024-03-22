@@ -1,0 +1,8 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Configuration
+metadata:
+ name: shared-storage-redis
+spec:
+ sharedStorage:
+   redis:
+     address: 10.99.145.74:6379

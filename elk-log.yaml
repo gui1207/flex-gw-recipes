@@ -1,0 +1,26 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Configuration
+metadata:
+  name: elk-config
+spec:
+  logging:
+    outputs:
+    - name: es
+      type: es
+      parameters:
+        host: "search-flex-gateway-mule-dev-t2pdz55joi6zhrnw46x36u5e34.us-east-1.es.amazonaws.com"
+        port: "443"
+        index: flex-application-logs-np
+        type: doc
+        HTTP_User: admin
+        HTTP_Passwd: Araujo@2023
+        tls: "on"
+        tls.verify: "off"   
+        retry_limit: "3"         
+    runtimeLogs:
+      logLevel: debug
+      outputs: 
+      - es
+    accessLogs:
+      outputs:
+      - es

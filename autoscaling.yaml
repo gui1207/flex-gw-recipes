@@ -1,0 +1,21 @@
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 11
+  targetCPUUtilizationPercentage: 75
+  targetMemoryUtilizationPercentage: 75
+  behavior:
+    scaleDown:
+      selectPolicy: Min
+      stabilizationWindowSeconds: 100
+      policies:
+      - type: Percent
+        value: 70
+        periodSeconds: 30
+    scaleUp:
+      selectPolicy: Max
+      stabilizationWindowSeconds: 100
+      policies:
+      - type: Percent
+        value: 70
+        periodSeconds: 30

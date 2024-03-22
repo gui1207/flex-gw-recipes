@@ -1,0 +1,14 @@
+apiVersion: gateway.mulesoft.com/v1alpha1
+kind: Configuration
+metadata:
+  name: logging-config
+spec:
+  logging:
+    outputs:
+    runtimeLogs:
+      logLevel: debug
+      outputs:
+      - default
+    accessLogs:
+      outputs:
+      - default
